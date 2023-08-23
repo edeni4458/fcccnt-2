@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+
+.buttons{
+    display: flex;
+    gap: 5px;
+    
+}
+.buttonShow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-Show{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+#show-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.red-font{
+    color: darkred;
+    font-size: small;
+}
+
+.white-font{
+    color: white;
+}
