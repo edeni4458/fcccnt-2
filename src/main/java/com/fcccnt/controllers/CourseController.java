@@ -88,7 +88,7 @@ public class CourseController {
         }
         else{
             courseService.updateCourse(course);
-            return "redirect:/classes";
+            return "redirect:/classes/{id}";
         }
     }
 
@@ -102,15 +102,15 @@ public class CourseController {
     }
 
     
-    // STUDENETs
+    // STUDENTs
     
-    @GetMapping("/classes/add/student")
+    @GetMapping("/add/student")
     public String newStudent(Model model, @ModelAttribute("student") Student student){
         model.addAttribute("courses", courseService.getAllCourses());
         return "classes/student.jsp";
     }
 
-    @PostMapping("/classes/add/student")
+    @PostMapping("/add/student")
     public String createStudent(Model model, @Valid @ModelAttribute("student") Student student, BindingResult result){
         if(result.hasErrors()){
             model.addAttribute("courses", courseService.getAllCourses());
@@ -122,20 +122,21 @@ public class CourseController {
         }
     }
 
-    @GetMapping("/classes/{id}/edit/student")
+    @GetMapping("/student/{id}/edit")
     public String editStudent(@PathVariable("id")Long id, Model model){
         Student student = studentService.getOneStudent(id);
         model.addAttribute("student", student);
         List<Course> courses = courseService.getAllCourses();
         model.addAttribute("courses", courses); 
+        Course course = courseService.getOneCourse(id);
+    	model.addAttribute("course", course);
+        
         return "classes/editStudent.jsp";
     }
 
-    @PutMapping("/classes/{id}/student")
-    public String updateStudent(Model model, @Valid @ModelAttribute("student")Student student, BindingResult result){
-        if(result.hasErrors()){
-            List<Course> courses = courseService.getAllCourses();
-            model.addAttribute("courses", courses);
+    @PutMapping("/student/{id}")
+    public String updateStudent(@Valid @ModelAttribute("student")Student student, BindingResult result){
+        if(result.hasErrors()){ 
             return "classes/editStudent.jsp";
         }
         else{

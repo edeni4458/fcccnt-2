@@ -45,7 +45,7 @@
 			<h2>${course.name}</h2>
 			<div class="button-Show">
 				<a class="btn btn-success" href="/classes/new">+ new course</a> <a
-					class="btn btn-success" href="/classes/add/student">+ add
+					class="btn btn-success" href="/add/student">+ add
 					student</a>
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 							<td>${student.name}</td>
 							<td>${student.contact}</td>
 							<td id="show-buttons"><a class="btn btn-primary"
-								href="/classes/${student.id}/edit/student">edit</a>
+								href="/student/${student.id}/edit">edit</a>
 								<form action="/student/${student.id}" method="post">
 									<input type="hidden" name="_method" value="delete"> <input
 										class="btn btn-danger" type="submit" value="remove">

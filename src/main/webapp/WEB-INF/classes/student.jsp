@@ -7,8 +7,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!-- for rendering errors on PUT routes -->
 <%@ page isErrorPage="true"%>
-<%@ page
-	import="java.time.LocalDate, java.time.format.DateTimeFormatter"%>
+<%@ page import="java.time.LocalDate, java.time.format.DateTimeFormatter"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +45,7 @@
 			</nav>
 			<h2>Add a Student</h2>
 			<hr>
-			<form:form action="/classes/add/student" method="post"
+			<form:form action="/add/student" method="post"
 				modelAttribute="student">
 				<div class="form-control">
 					<form:label path="name">Student Name</form:label>
@@ -71,6 +70,7 @@
 				<input class="btn btn-primary" type="submit" value="add student">
 				<a class="btn btn-warning" href="/classes">cancel</a>
 			</form:form>
+			<p>${course }</p>
 		</div>
 	</div>
 	</div>

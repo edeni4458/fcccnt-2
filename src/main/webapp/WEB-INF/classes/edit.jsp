@@ -46,7 +46,7 @@
 		</nav>
 		<h2>${course.name}</h2>
 		<div class="container-md">
-			<form:form action="/classes/${course.id}" method="post"
+			<form:form action="/classes/${course.id}" method="put"
 				modelAttribute="course">
 				<input type="hidden" name="_method" value="put">
 				<form:input type="hidden" path="user" value="${userId}"></form:input>
@@ -111,12 +111,12 @@
 				<div class="buttons">
 					<input class="btn btn-primary" type="submit" value="update">
 			</form:form>
-			<a class="btn btn-warning" href="/classes">cancel</a>
+			<a class="btn btn-warning" href="/classes/${course.id}">cancel</a>
 			<c:if test="${course.user.id == userId}">
-				<form action="/classes/${course.id}" method="post">
+				<form:form action="/classes/${course.id}" method="post">
 					<input type="hidden" name="_method" value="delete"> <input
 						class="btn btn-danger" type="submit" value="delete">
-				</form>
+				</form:form>
 			</c:if>
 		</div>
 	</div>

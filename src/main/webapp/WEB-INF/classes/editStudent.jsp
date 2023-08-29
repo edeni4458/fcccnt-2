@@ -44,7 +44,7 @@
 			</nav>
 			<h2>Edit Student</h2>
 			<hr>
-			<form:form action="/classes/${student.id}/student" method="put"
+			<form:form action="/student/${student.id}" method="put"
 				modelAttribute="student">
 				<input type="hidden" name="_method" value="put">
 				<div class="form-control">
@@ -72,13 +72,15 @@
 			</form:form>
 			<a class="btn btn-warning" href="/classes">cancel</a>
 			<c:if test="${course.user.id == userId}">
-				<form action="/classes/${course.id}" method="post">
-					<input type="hidden" name="_method" value="delete"> <input
-						class="btn btn-danger" type="submit" value="delete">
-				</form>
+				<form:form action="/classes/${student.id}" method="post">
+					<input type="hidden" name="_method" value="delete">
+					<input class="btn btn-danger" type="submit" value="delete">
+				</form:form>
 			</c:if>
 		</div>
+		<p>${course}</p>
 	</div>
 	</div>
+
 </body>
 </html>

@@ -30,7 +30,7 @@
             <h5>Class Schedules</h5>
             <div class="buttons">
                 <a class="btn btn-outline-success" href="/classes/new">+ new course</a>
-                <a class="btn btn-outline-success" href="/classes/add/student">+ add student</a>
+                <a class="btn btn-outline-success" href="/add/student">+ add student</a>
             </div>
         </div>
         <table class="table table-striped">
