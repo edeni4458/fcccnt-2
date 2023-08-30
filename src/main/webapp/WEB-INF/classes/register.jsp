@@ -22,6 +22,12 @@
 </head>
 <body class="p-1 mb-5 bg-success">
 
+		<a href="https://www.fccbronx.org/" target='_blank'>
+			<button class="btn btn-dark">Know. Love. Live.</button>
+		</a> <a href="/">
+			<button class="btn btn-warning">New? Click here.</button>
+		</a>
+
 	<div class="container-register">
 		<div class="left-side">
 			<h2>FCC Connect</h2>
@@ -30,7 +36,7 @@
 				<form:form action="/login" method="post" modelAttribute="newLogin">
 					<div class="form-group">
 						<form:label path="email">email</form:label>
-						<form:input class="form-control" path="email" />
+						<form:input type="email" class="form-control" path="email" />
 						<form:errors class="red-font" path="email" />
 					</div>
 					<div>
@@ -46,16 +52,7 @@
 		</div>
 		<img src="https://biblia.com/verseoftheday/image/Ps32.8?width=700"
 			class="connect-img-login" alt="scripture on instruction">
-		<div class="register-here-btn">
-			<a href="/">
-				<button class="btn btn-outline-warning">New, click here</button>
-			</a>
-		</div>
-			<div class="register-here-btn">
-			<a href="https://www.fccbronx.org/" target='_blank'>
-				<button class="btn btn-outline-dark">Know. Love. Live.</button>
-			</a>
-		</div>
+		<div class="register-here-btn"></div>
 	</div>
 
 

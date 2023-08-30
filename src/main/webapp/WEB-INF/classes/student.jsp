@@ -24,10 +24,10 @@
 
 </head>
 
-<body class="p-3 mb-2 bg-dark text-white">
+<body class="p-3 mb-2 bg-secondary text-white">
 	<div class="container">
 		<div class="container-md">
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
 				<div class="container-fluid">
 					<a class="navbar-brand" href="/classes">Dashboard</a>
 					<button class="navbar-toggler" type="button"
@@ -45,35 +45,47 @@
 			</nav>
 			<h2>Add a Student</h2>
 			<hr>
-			<form:form action="/add/student" method="post"
-				modelAttribute="student">
-				<div class="form-control">
-					<form:label path="name">Student Name</form:label>
-					<form:errors class="red-font" path="name"></form:errors>
-					<form:input class="form-control" path="name"></form:input>
+			<form:form action="/add/student" method="post" modelAttribute="student">
+				<div class="row mb-3">
+					<form:label for="colFormLabel" class="col-sm-2 col-form-label" path="name">Student Name</form:label>
+					<div class="col-sm-10">
+						<form:errors class="red-font" path="name"></form:errors>
+						<form:input class="form-control" path="name" placeholder="John"></form:input>
+					</div>
 				</div>
-				<div class="form-control">
-					<form:label path="contact">Student Email</form:label>
-					<form:errors class="red-font" path="contact"></form:errors>
-					<form:input class="form-control" path="contact"></form:input>
+						
+				<div class="row mb-3">
+					<form:label for="colFormLabel" class="col-sm-2 col-form-label" path="contact">Student Email</form:label>
+					<div class="col-sm-10">
+						<form:errors class="red-font" path="contact"></form:errors>
+						<form:input class="form-control" path="contact" placeholder="john@email.com"></form:input>
+					</div>
 				</div>
-				<div class="form-control">
-					<form:label path="course">Classes</form:label>
-					<form:errors class="red-font" path="course"></form:errors>
-					<form:select class="form-control" path="course">
-						<c:forEach var="course" items="${courses}">
-							<option value="${course.id}">${course.name}</option>
-						</c:forEach>
-					</form:select>
+				<div class="row mb-3">
+					<form:label for="colFormLabel" class="col-sm-2 col-form-label" path="course">Classes</form:label>
+					<div class="col-sm-10">
+						<form:errors class="red-font" path="course"></form:errors>
+						<form:select class="form-control" path="course">
+							<c:forEach var="course" items="${courses}">
+								<option value="${course.id}">${course.name}</option>
+							</c:forEach>
+						</form:select>
+					</div>
 				</div>
 				<hr>
-				<input class="btn btn-primary" type="submit" value="add student">
-				<a class="btn btn-warning" href="/classes">cancel</a>
-			</form:form>
-			<p>${course }</p>
-		</div>
+				<div class="buttons">
+				<input class="btn btn-dark" type="submit" value="submit"> 
+				</form:form>
+					<a class="btn btn-warning" href="/classes">cancel</a>
+					<c:if test="${course.user.id == userId}">
+						<form:form action="/classes/${student.id }" method="post">
+							<input type="hidden" name="method" value="delete">
+							<input class="btn btn-danger" type="submit" value="delete">
+						</form:form>
+					</c:if>
+				</div>
 	</div>
-	</div>
+</div>
 
 </body>
 </html>

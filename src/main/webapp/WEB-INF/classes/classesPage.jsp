@@ -14,6 +14,7 @@
 <title>Class Dashboard</title>
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href=" css/classPage.css">
+	<script type="text/javascript" src="/css/classPage.js"></script>
 
 </head>
 <body>
@@ -49,7 +50,7 @@
                         <td>
                             <a id="remove-line" href="/classes/${course.id}">${course.name}</a>
                             <c:if test="${course.user.id == userId}">
-                                <a class="btn btn-dark" href="/classes/${course.id}/edit">edit</a>
+                                <a class="btn btn-primary" href="/classes/${course.id}/edit">edit</a>
                             </c:if>
                         </td>
                         <td>${course.teacher}</td>
@@ -62,9 +63,6 @@
                 </c:forEach>
             </tbody>
         </table>
-    </div>
-    <div class="logo-box">
-        <a href="https://www.fccbronx.org/" target='_blank'><img src="https://www.crosslinkcares.org/wp-content/uploads/2021/04/fcc-tile.png" alt="FCC logo"></a>
     </div>
 </body>
 </html>

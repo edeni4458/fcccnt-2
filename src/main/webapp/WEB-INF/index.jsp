@@ -45,7 +45,7 @@
 					</div>
 					<div class="form-group">
 						<form:label path="email">email</form:label>
-						<form:input class="form-control" path="email" />
+						<form:input type="email" class="form-control" path="email" />
 						<form:errors class="red-font" path="email" />
 					</div>
 					<div>
@@ -68,7 +68,7 @@
 			src="https://media.istockphoto.com/id/1280427635/vector/people-connect-puzzles-cartoon-happy-young-team-of-characters-connecting-puzzle-pieces.jpg?s=170667a&w=0&k=20&c=hivV0N89RDGlb8jb1AaA3qeTeM1faMUIZck1eIUB0DA="
 			class="connect-img" alt="people connecting">
 		<div class="register-here-btn">
-			<a href="/userLogin"><button class="btn btn-outline-primary">Have an account, login</button></a>
+			<a href="/userLogin"><button class="btn btn-outline-primary">Have an account? Login.</button></a>
 		</div>
 
 	</div>

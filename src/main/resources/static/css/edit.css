@@ -3,6 +3,7 @@
 .buttons{
     display: flex;
     gap: 5px;
+    margin-top: 15px;
     
 }
 .buttonShow{
@@ -23,7 +24,7 @@
 }
 
 .red-font{
-    color: darkred;
+    color: red;
     font-size: small;
 }
 

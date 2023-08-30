@@ -23,9 +23,9 @@
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
 </head>
-<body class="p-3 mb-2 bg-dark text-white">
+<body class="p-3 mb-2 bg-info text-white">
 	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-info">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/classes">Dashboard</a>
 				<button class="navbar-toggler" type="button"
@@ -44,13 +44,13 @@
 		<div class="buttonShow">
 			<h2>${course.name}</h2>
 			<div class="button-Show">
-				<a class="btn btn-success" href="/classes/new">+ new course</a> <a
-					class="btn btn-success" href="/add/student">+ add
+				<a class="btn btn-outline-light" href="/classes/new">+ new course</a> <a
+					class="btn btn-outline-light" href="/add/student">+ add
 					student</a>
 			</div>
 		</div>
 		<hr>
-		<div class="card text-white bg-dark">
+		<div class="card text-white bg-secondary">
 			<div class="card-body">
 				<h5>Teacher: ${course.teacher}</h5>
 				<h5>Start Date: ${course.date} to End Date: ${course.endDate}</h5>
@@ -62,29 +62,31 @@
 			</div>
 		</div>
 		<hr>
-		<div class="studentsView">
-			<h3>Students Enrolled:</h3>
-			<table class="table table">
-				<thead class="white-font">
-					<th>Student Name</th>
-					<th>Student Email</th>
-					<th>Action</th>
-				</thead>
-				<tbody class="white-font">
-					<c:forEach var="student" items="${course.students}">
-						<tr>
-							<td>${student.name}</td>
-							<td>${student.contact}</td>
-							<td id="show-buttons"><a class="btn btn-primary"
-								href="/student/${student.id}/edit">edit</a>
-								<form action="/student/${student.id}" method="post">
-									<input type="hidden" name="_method" value="delete"> <input
-										class="btn btn-danger" type="submit" value="remove">
-								</form></td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+		<div class="card bg-secondary">
+			<div>
+				<h3>Students Enrolled:</h3>
+				<table class="table table">
+					<thead class="white-font">
+						<th>Student Name</th>
+						<th>Student Email</th>
+						<th>Action</th>
+					</thead>
+					<tbody class="white-font">
+						<c:forEach var="student" items="${course.students}">
+							<tr>
+								<td>${student.name}</td>
+								<td>${student.contact}</td>
+								<td id="show-buttons"><a class="btn btn-primary"
+									href="/student/${student.id}/edit">edit</a>
+									<form action="/student/${student.id}" method="post">
+										<input type="hidden" name="_method" value="delete"> <input
+											class="btn btn-danger" type="submit" value="remove">
+									</form></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+			</div>
 		</div>
 		<div class="buttons">
 			<a class="btn btn-warning" href="/classes">return</a>
